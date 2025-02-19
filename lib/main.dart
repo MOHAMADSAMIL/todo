@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:todo/feature/authentication/view/pages/signin_page.dart';
-import 'package:todo/feature/authentication/view/pages/signup_page.dart';
+import 'package:todo/feature/todo/view/pages/categories_page.dart';
+import 'package:todo/feature/todo/view/pages/settings_page.dart';
 
 void main() {
   runApp(const MyApp());
@@ -13,7 +13,7 @@ class MyApp  extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: SigninPage(),
+      home: SettingsPage(),
     );
   }
 }

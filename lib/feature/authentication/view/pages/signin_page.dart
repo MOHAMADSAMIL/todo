@@ -13,11 +13,14 @@ class SigninPage extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
           Row(
-            
             children: [
               Padding(
                 padding: const EdgeInsets.only(left: 15),
-                child: Icon(Icons.arrow_back),
+                child: GestureDetector(
+                  onTap: () {
+                    Navigator.pop(context);
+                  },
+                  child: Icon(Icons.arrow_back)),
               ),
               
               Padding(

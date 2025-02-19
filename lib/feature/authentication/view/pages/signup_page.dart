@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:todo/feature/authentication/view/pages/forgot_password.dart';
 import 'package:todo/feature/authentication/view/widgets/bottom_link_widget.dart';
 import 'package:todo/feature/authentication/view/widgets/button_widget.dart';
 import 'package:todo/feature/authentication/view/widgets/text_field_widget.dart';
@@ -30,7 +31,13 @@ class SignupPage extends StatelessWidget {
                 onTap: () {
                   
                 },
-                child: Text("Forgot Password?",style: TextStyle(fontSize: 10,fontWeight: FontWeight.w900),)),
+                child: GestureDetector(
+                  onTap: () {
+                    Navigator.of(context).push(MaterialPageRoute(builder: (context) {
+                     return ForgotPassword();
+                    },));
+                  },
+                  child: Text("Forgot Password?",style: TextStyle(fontSize: 10,fontWeight: FontWeight.w900),))),
               SizedBox(height: 25,),
              CommonButtonWidget(),
              SizedBox(height: 30,),
