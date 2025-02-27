@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:todo/feature/authentication/view/pages/signup_page.dart';
 import 'package:todo/feature/authentication/view/widgets/bottom_link_widget.dart';
 import 'package:todo/feature/authentication/view/widgets/button_widget.dart';
 import 'package:todo/feature/authentication/view/widgets/text_field_widget.dart';
@@ -20,40 +21,43 @@ class SigninPage extends StatelessWidget {
                   onTap: () {
                     Navigator.pop(context);
                   },
-                  child: Icon(Icons.arrow_back)),
+                  child: Icon(Icons.arrow_back),
+                ),
               ),
-              
+
               Padding(
                 padding: const EdgeInsets.only(left: 65),
-                child: Text("Create an Account",style: TextStyle(fontSize: 16,fontWeight: FontWeight.bold),),
+                child: Text(
+                  "Create an Account",
+                  style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
+                ),
               ),
-              
             ],
           ),
-          SizedBox(height: 30,),
+          SizedBox(height: 30),
           Padding(
-            padding: const EdgeInsets.only(left: 35,right: 35),
+            padding: const EdgeInsets.only(left: 35, right: 35),
             child: Column(
               children: [
-            TextFieldWidget(hintText: "Full Name"),
-            SizedBox(height: 15,),
-            TextFieldWidget(hintText: "Email"),
-            SizedBox(height: 15,),
-            TextFieldWidget(hintText: "Password"),
-            SizedBox(height: 15,),
-            TextFieldWidget(hintText: "Confirm Password"),
-            SizedBox(height: 35,),
-            CommonButtonWidget(),
-            SizedBox(height: 40,),
-            BottomLinkWidget(Linktext: "Log In", 
-            
-            text: "Already have an account? ",
-            ),
-            
+                TextFieldWidget(hintText: "Full Name"),
+                SizedBox(height: 15),
+                TextFieldWidget(hintText: "Email"),
+                SizedBox(height: 15),
+                TextFieldWidget(hintText: "Password"),
+                SizedBox(height: 15),
+                TextFieldWidget(hintText: "Confirm Password"),
+                SizedBox(height: 35),
+                CommonButtonWidget(),
+                SizedBox(height: 40),
+                BottomLinkWidget(
+                  Linktext: "Log In",
+                  navigate: SignupPage(),
+
+                  text: "Already have an account? ",
+                ),
               ],
             ),
-          )
-          
+          ),
         ],
       ),
     );

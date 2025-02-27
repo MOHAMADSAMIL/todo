@@ -1,13 +1,15 @@
 import 'package:flutter/material.dart';
-import 'package:todo/feature/authentication/view/pages/signin_page.dart';
 
 class BottomLinkWidget extends StatelessWidget {
   final String Linktext;
   final String text;
+  final navigate;
+
   const BottomLinkWidget({
-    super.key, 
-    required this.Linktext, 
+    super.key,
+    required this.Linktext,
     required this.text,
+    required this.navigate,
   });
 
   @override
@@ -15,13 +17,23 @@ class BottomLinkWidget extends StatelessWidget {
     return Row(
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
-        Text(text,style: TextStyle(fontSize: 10),),
+        Text(text, style: TextStyle(fontSize: 10)),
         GestureDetector(
           onTap: () {
-            Navigator.push(context, MaterialPageRoute(builder: (context) => SigninPage(),));
+            Navigator.push(
+              context,
+              MaterialPageRoute(
+                builder: (context) {
+                  return navigate;
+                },
+              ),
+            );
           },
-          child: Text(Linktext,style: TextStyle(fontSize: 11,fontWeight: FontWeight.w900,),)),
-        
+          child: Text(
+            Linktext,
+            style: TextStyle(fontSize: 11, fontWeight: FontWeight.w900),
+          ),
+        ),
       ],
     );
   }
